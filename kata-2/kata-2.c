@@ -20,7 +20,7 @@ int contains(char * string1, char * containsString1){
                 break;
             }
           
-        } 
+        }u 
         if(!found) {
             return 0;
         }
