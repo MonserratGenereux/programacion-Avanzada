@@ -15,9 +15,9 @@
 int testsRun = 0;
 
 static char * testUnit() {
-  char * string = "hello";
+  char * string = "hola como estas";
   char *result = reverse(string);
-  char *reverse = "olleh";
+  char *reverse = "satse omoc aloh";
   muAssert("No funciona", strcmp(result,reverse)==0);
   return 0;
 }
