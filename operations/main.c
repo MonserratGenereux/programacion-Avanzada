@@ -18,8 +18,13 @@ int main(int argc, char **argv) {
 	char message[200];
 	int operator1,operator2;
 	int(*operation)(int,int);
+	char **operationNames;
+	char ** messages;
+	char ** lang;
+
+	lang=getenv("OPER_LANG")
 	operationName=malloc(sizeof(char)*MAX_LENGTH);
-	printf("Cual es la operacion\n");
+	printf("%s\n", messages[0]);
 	scanf("%s",&operationName);
 	scanf("%d",&operator1);
 	scanf("%d",&operator2);
@@ -28,13 +33,13 @@ int main(int argc, char **argv) {
 	printDebug(message);
 	sprintf(message,"operator1 = %d\n", operator1);
 	printDebug(message);
-	sprintf(message,"operator2 = %d\n", operator2);
+	sprintf(message,"operator2 = %d \n", operator2);
 	printDebug(message);
 
-	if(!strcmp(operationName,"suma")){
+	if(!strcmp(operationName,operationNames[0])){
 		operation=suma;
 	}
-	if(!strcmp(operationName,"resta")){
+	if(!strcmp(operationName,operationNames[1])){
 		operation=resta;
 	}
 	printf("%d\n", operation(operator1,operator2));
