@@ -1,7 +1,7 @@
 all:
 	 gcc -c dict.c
 	 gcc -c main.c
-	 gcc -o main dict.o main.o
+	 gcc -o main.exe dict.o main.o
 
 test_dict: clean
 	 gcc -c dict.c
@@ -12,10 +12,10 @@ test_dict: clean
 test:	 test_dict
 
 clean:
-	 rm *.out *.o *.exe || exit 0
+	 rm *.out *.o *.exe *.gch || exit 0
 
 run:
 	 gcc -c dict.c
 	 gcc -c main.c
 	 gcc -o main.exe dict.o main.o
-	 ./main
+	 ./main.exe

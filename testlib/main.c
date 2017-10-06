@@ -1,38 +1,40 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "dict.h"
 #include <string.h>
+#include "dict.h"
 
-/* Add function signatures here */
 typedef struct a {
-	char *name;
-	int semester;
-}Student;
+    char * name;
+    int semester;
+} Student;
 
 int main(int argc, char **argv) {
-  /* Start your code here */
-  Dict * students;
-  Student st;
-  Student *newStudent, *argsStudent;
-  int errorCode;
-  st.name = strdup("Monserrat Sánchez");
-  st.semester = 6;
+    Dictionary *students;
+    int error_code;
 
+    Student st;
+    Student * new_student;
+    char matricula[100];
+    st.name = strdup("Angel Perez");
+    st.semester = 6;
 
-  students = initDictionary(100, &errorCode);
-  upsertDictionary(students,"0101", (void *)&st,sizeof(Student), &errorCode);
+    students = init_dict(100, &error_code);
+    upsert_dict(students, "0101", (void *) &st, sizeof(Student), &error_code);
 
-  st.name= "Juan";
-  st.semester= 8;
-  upsertDictionary(students,"0202", (void *)&st,sizeof(Student), &errorCode);
+    st.name = strdup("Jesus Lopez");
+    st.semester = 4;
 
-  newStudent =(Student *)getDictionary(students,"0101",sizeof(Student), &errorCode);
-  argsStudent=(Student *)getDictionary(students,argv[1],sizeof(Student), &errorCode);
-  if(Student==NULL){
-  	printf("not found\n");
-  }else{
-  	printf("name: %s, semester: %d\n", argsStudent->name);
-  }
-  
-  return 0;
+    upsert_dict(students, "0202", (void *) &st, sizeof(Student), &error_code);
+
+    printf("What is the id?: ");
+    scanf("%s", matricula);
+    new_student = (Student *) get_dict(students, matricula, sizeof(Student), &error_code);
+    if (new_student == NULL) {
+        printf("No such student.\n");
+        return 0;
+    } else {
+        printf("Name: %s, Semester: %d\n", new_student->name, new_student->semester);
+        return 0;
+    }
+    return 0;
 }
