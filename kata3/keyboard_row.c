@@ -3,6 +3,15 @@
 #include <string.h>
 #include "keyboard_row.h"
 
+/** keyboard_row
+  * Receive a array of words 
+  * Returns the words that can be written with a single row in the keyboard.
+  * @param:
+  *   words: array of words.
+  * @return:
+  *   char **: words that can be written with a single row in the keyboard.
+ */
+
 char ** keyboard_row(char * words[]) {
 
   char row1[]={'q','w','e','r','t','y','u','i','o','p'};
