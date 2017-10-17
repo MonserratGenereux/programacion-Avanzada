@@ -5,7 +5,12 @@
 /* Add function signatures here */
 
 int main(int argc, char **argv) {
-  /* Start your code here */
-  printf("Hello from main\n");
+	char * romanNumber;
+
+	printf("Enter the number: ");
+	scanf("%s", romanNumber);
+
+	int number = romanToInt(romanNumber);
+	printf("Number = %d\n",number);
   return 0;
 }

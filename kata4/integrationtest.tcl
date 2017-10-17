@@ -14,7 +14,6 @@ proc reset {} {exec tput sgr0 > /dev/tty}
 eval spawn [lrange $argv 0 end]
 
 expect "Size of row: " {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
-#expect "What is the id:" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "2\r"
 expect "Size of col: " {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "2\r"
