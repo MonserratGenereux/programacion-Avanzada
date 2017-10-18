@@ -11,6 +11,6 @@ int main(int argc, char **argv) {
 	scanf("%s", romanNumber);
 
 	int number = romanToInt(romanNumber);
-	printf("Number = %d\n",number);
+	printf("%d\n",number);
   return 0;
 }

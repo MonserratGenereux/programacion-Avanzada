@@ -15,9 +15,9 @@
 int testsRun = 0;
 
 static char * testUnit() {
-  char * romanNumber ="MMXVII";
+  char * romanNumber ="MMCMVII";
   int number = romanToInt(romanNumber);
-  muAssert("error, testUnit 1 != 1", number == 2017);
+  muAssert("error, testUnit 1 != 1", number == 3998);
   return 0;
 }
 
