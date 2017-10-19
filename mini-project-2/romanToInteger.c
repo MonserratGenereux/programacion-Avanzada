@@ -32,7 +32,7 @@ int romanToInt(char *romanNumber) {
                 if(last >= _M){
                     result=result + _M;
                 }else{
-                    result=result + _M - (last << 1);
+                    result=result + _M - (last*2);
                 }
                 last = _M;        
             break;
@@ -40,7 +40,7 @@ int romanToInt(char *romanNumber) {
                  if(last >= _D){
                     result=result + _D;
                 }else{
-                    result=result + _D - (last << 1);
+                    result=result + _D - (last*2);
                 }
                 last = _D;
             break;
@@ -48,7 +48,7 @@ int romanToInt(char *romanNumber) {
                 if(last >= _C){
                     result=result + _C;
                 }else{
-                    result=result + _C - (last << 1);
+                    result=result + _C - (last*2);
                 }
                 last = _C;
             break;
@@ -56,7 +56,7 @@ int romanToInt(char *romanNumber) {
                 if(last >= _L){
                     result=result + _L;
                 }else{
-                    result=result + _L - (last << 1);
+                    result=result + _L - (last*2);
                 }
                 last = _L;
             break;
@@ -64,7 +64,7 @@ int romanToInt(char *romanNumber) {
                 if(last >= _X){
                     result=result + _X;
                 }else{
-                    result=result + _X - (last << 1);
+                    result=result + _X - (last*2);
                 }
                 last = _X;
             break;
@@ -72,7 +72,7 @@ int romanToInt(char *romanNumber) {
                 if(last >= _V){
                     result=result + _V;
                 }else{
-                    result=result + _V - (last << 1);
+                    result=result + _V - (last*2);
                 }
                 last = _V;
             break;
@@ -80,13 +80,12 @@ int romanToInt(char *romanNumber) {
                 if(last >= _I){
                     result=result + _I;
                 }else{
-                    result=result + _I - (last << 1);
+                    result=result + _I - (last*2);
                 }
                 last = _I;
             break;
         }
         
     }
-    printf("%d\n", result);
     return result;
 }

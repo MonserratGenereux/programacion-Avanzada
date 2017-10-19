@@ -13,8 +13,17 @@ proc reset {} {exec tput sgr0 > /dev/tty}
 eval spawn [lrange $argv 0 end]
 
 expect "Enter the number:" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
-
-#expect "What is the id:" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
-send "MMXII\r"
+send "MMXVII\r"
 expect "2017" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 
+eval spawn [lrange $argv 0 end]
+
+expect "Enter the number:" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "MMMCDLVIII\r"
+expect "3458" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+
+eval spawn [lrange $argv 0 end]
+
+expect "Enter the number:" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+send "MMMCMXCIX\r"
+expect "3999" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
