@@ -3,6 +3,7 @@
 #include "thread.h"
 #include <pthread.h>
 #include <stdio.h>
+#include <unistd.h>
 #define NUM_THREADS 5
 
 unsigned int total;
@@ -10,8 +11,12 @@ unsigned int total;
  {
     long tid;
     tid = (long)threadid;
+    unsigned int localTotal;
     printf("Adding 100 #%ld!\n", tid);
-    total +=100;
+    localTotal= total;
+    localTotal +=100;
+    sleep(tid%5);
+    total = localTotal;
     pthread_exit(NULL);
  }
 
