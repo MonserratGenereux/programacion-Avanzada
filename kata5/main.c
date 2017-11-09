@@ -6,7 +6,7 @@
 
 int main(int argc, char **argv) {
     int n;
-    printf("Value of n: "); scanf("%d", &n);
+    printf("n="); scanf("%d", &n);
     int * size = (int *) malloc(sizeof(int));
     char ** result = fizzbuzz(n, size);
     int i = 0;

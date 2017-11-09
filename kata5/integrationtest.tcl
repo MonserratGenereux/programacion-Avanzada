@@ -11,15 +11,7 @@ proc reset {} {exec tput sgr0 > /dev/tty}
 #Put your test case here
 eval spawn [lrange $argv 0 end]
 
-expect "Value of n: " {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
-send "3\r"
-expect "1" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
-expect "2" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
-expect "Fizz" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
-
-eval spawn [lrange $argv 0 end]
-
-expect "Value of n: " {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect "n=" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "15\r"
 expect "1" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 expect "2" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
